@@ -17,8 +17,8 @@ package com.example.demo.myfirstapi.controller;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.PathVariable; // Import this!
-//import org.springframework.web.bind.annotation.RequestParam;
 
 //import java.util.Map;
 //import java.util.HashMap;
@@ -42,19 +42,19 @@ public class HelloWorldController {
 //        return "Greetings, " + name + "!";
 //    }
 //
-//    @GetMapping("/greeting")
-//    public String greetWithParam(
-//            @RequestParam(value = "name", required = false, defaultValue = "World") String name) {
-//        return "Hello, " + name + "!";
-//    }
-//
-//    @GetMapping("/calculate/sum")
-//    public String sumNumbers(
-//            @RequestParam("num1") int number1,
-//            @RequestParam("num2") int number2) {
-//        int sum = number1 + number2;
-//        return "The sum of " + number1 + " and " + number2 + " is " + sum;
-//    }
+    @GetMapping("/greeting")
+    public String greetWithParam(
+            @RequestParam(value = "name", required = false, defaultValue = "World") String name) {
+        return "Hello, " + name + "!";
+    }
+
+    @GetMapping("/calculate/sum")
+    public String sumNumbers(
+            @RequestParam("num1") int number1,
+            @RequestParam("num2") int number2) {
+        int sum = number1 + number2;
+        return "The sum of " + number1 + " and " + number2 + " is " + sum;
+    }
 //
 //    @GetMapping("/info")
 //    public Map<String, String> getAppInfo() {
