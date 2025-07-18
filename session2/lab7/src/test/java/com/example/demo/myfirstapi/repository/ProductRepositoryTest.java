@@ -44,6 +44,26 @@ class ProductRepositoryTest {
     }
 
     @Test
-    void save() {
+    void saveNullIdProduct() {
+        Product nullIdProduct = new Product(null, "Laptop", 750.0);
+        Product saved = productRepository.save(nullIdProduct);
+
+        assertNotNull(saved.getId());
+    }
+
+    @Test
+    void saveExistingProductButWithDifferentPrice() {
+        Product changedPriceProduct = new Product(1L, "Laptop", 750.0);
+        Product saved = productRepository.save(changedPriceProduct);
+
+        assertEquals(750.0, saved.getPrice(), 0.0001);
+    }
+
+    @Test
+    void saveExistingProduct() {
+        Product existingProduct = new Product(1L, "Laptop", 1200.00);
+        Product saved = productRepository.save(existingProduct);
+
+        assertEquals(3, products.size());
     }
 }
