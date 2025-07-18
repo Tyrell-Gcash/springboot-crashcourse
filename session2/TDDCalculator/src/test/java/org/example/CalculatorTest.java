@@ -14,65 +14,93 @@ class CalculatorTest {
     }
 
     @Test
-    void sumIntegers(){
-        int integerResult = calculator.sum(5,6);
+    void addIntegers(){
+        int integerResult = calculator.add(5,6);
         assertEquals(11, integerResult, 0.001);
     }
 
     @Test
-    void sumLongs(){
-        long longResult = calculator.sum(3000000000L,5000000000L);
+    void addLongs(){
+        long longResult = calculator.add(3000000000L,5000000000L);
         assertEquals(8000000000L, longResult, 0.001);
     }
 
     @Test
-    void sumShorts(){
-        short shortResult = calculator.sum((short)10000, (short)20000);
+    void addShorts(){
+        short shortResult = calculator.add((short)10000, (short)20000);
         assertEquals(30000, shortResult, 0.001);
     }
 
     @Test
-    void sumFloats(){
-        float floatResult = calculator.sum(2.00f, 4.00f);
+    void addFloats(){
+        float floatResult = calculator.add(2.00f, 4.00f);
         assertEquals(6.00f, floatResult, 0.001);
     }
 
     @Test
-    void sumDoubles(){
-        double doubleResult = calculator.sum(2.0, 4.0);
+    void addDoubles(){
+        double doubleResult = calculator.add(2.0, 4.0);
         assertEquals(6.00, doubleResult, 0.001);
     }
 
     @Test
-    void differenceIntegers(){
-        int integerResult = calculator.difference(5,6);
+    void subtractIntegers(){
+        int integerResult = calculator.subtract(5,6);
         assertEquals(-1, integerResult, 0.001);
     }
 
     @Test
-    void differenceLongs(){
-        long longResult = calculator.difference(3000000000L,5000000000L);
+    void subtractLongs(){
+        long longResult = calculator.subtract(3000000000L,5000000000L);
         assertEquals(-2000000000L, longResult, 0.001);
     }
 
     @Test
-    void differenceShorts(){
-        short shortResult = calculator.difference((short)10000, (short)20000);
+    void subtractShorts(){
+        short shortResult = calculator.subtract((short)10000, (short)20000);
         assertEquals(-10000, shortResult, 0.001);
     }
 
     @Test
-    void differenceFloats(){
-        float floatResult = calculator.difference(2.00f, 4.00f);
+    void subtractFloats(){
+        float floatResult = calculator.subtract(2.00f, 4.00f);
         assertEquals(-2.00f, floatResult, 0.001);
     }
 
     @Test
-    void differenceDoubles(){
-        double doubleResult = calculator.difference(2.0, 4.0);
+    void subtractDoubles(){
+        double doubleResult = calculator.subtract(2.0, 4.0);
         assertEquals(-2.00, doubleResult, 0.001);
     }
 
+    @Test
+    void multiplyIntegers(){
+        int integerResult = calculator.multiply(5,6);
+        assertEquals(30, integerResult, 0.001);
+    }
 
+    @Test
+    void multiplyLongs(){
+        long longResult = calculator.multiply(30L,50L);
+        assertEquals(1500L, longResult, 0.001);
+    }
+
+    @Test
+    void multiplyShorts(){
+        short shortResult = calculator.multiply((short)10, (short)20);
+        assertEquals(200, shortResult, 0.001);
+    }
+
+    @Test
+    void multiplyFloats(){
+        float floatResult = calculator.multiply(2.00f, 4.00f);
+        assertEquals(8.00f, floatResult, 0.001);
+    }
+
+    @Test
+    void multiplyDoubles(){
+        double doubleResult = calculator.multiply(2.0, 4.0);
+        assertEquals(8.00, doubleResult, 0.001);
+    }
 
 }
