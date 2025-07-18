@@ -132,7 +132,7 @@ class CalculatorTest {
         double doubleResult = calculator.divide(10.0, 2.0);
         assertEquals(5.0, doubleResult, 0.0001);
     }
- 
+
     @Test
     void shouldReturnErrorWhenDividingByZero(){
         ArithmeticException thrown = assertThrows(
