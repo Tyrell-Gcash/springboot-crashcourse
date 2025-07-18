@@ -32,5 +32,44 @@ public class Calculator {
 
     public double multiply (double a, double b){ return a * b; }
 
+    public int divide (int a, int b){
+        if (a == 0) return 0;
+
+        if (b == 0){ throw new ArithmeticException("Cannot divide by zero."); }
+
+        return a / b;
+    }
+
+    public long divide (long a, long b){
+        if (a == 0) return 0;
+
+        if (b == 0){ throw new ArithmeticException("Cannot divide by zero."); }
+
+        return a / b;
+    }
+
+    public short divide (short a, short b){
+        if (a == 0) return 0;
+
+        if (b == 0){ throw new ArithmeticException("Cannot divide by zero."); }
+
+        return (short)(a / b);
+    }
+
+    public float divide (float a, float b){
+        if (a == 0) return 0;
+
+        if (b == 0){ throw new ArithmeticException("Cannot divide by zero."); }
+
+        return a / b;
+    }
+
+    public double divide (double a, double b){
+        if (a == 0) return 0;
+
+        if (b == 0){ throw new ArithmeticException("Cannot divide by zero."); }
+
+        return a / b;
+    }
 }
 
