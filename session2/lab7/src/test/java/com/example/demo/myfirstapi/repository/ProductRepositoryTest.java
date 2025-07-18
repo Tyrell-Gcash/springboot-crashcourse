@@ -49,6 +49,7 @@ class ProductRepositoryTest {
         Product saved = productRepository.save(nullIdProduct);
 
         assertNotNull(saved.getId());
+        assertEquals(4L, saved.getId());
     }
 
     @Test
@@ -56,6 +57,7 @@ class ProductRepositoryTest {
         Product changedPriceProduct = new Product(1L, "Laptop", 750.0);
         Product saved = productRepository.save(changedPriceProduct);
 
+        assertEquals("Laptop", saved.getName());
         assertEquals(750.0, saved.getPrice(), 0.0001);
     }
 
@@ -64,6 +66,8 @@ class ProductRepositoryTest {
         Product existingProduct = new Product(1L, "Laptop", 1200.00);
         Product saved = productRepository.save(existingProduct);
 
+        assertEquals("Laptop", saved.getName());
+        assertEquals(1200.00, saved.getPrice());
         assertEquals(3, products.size());
     }
 }
