@@ -133,4 +133,14 @@ class CalculatorTest {
         assertEquals(5.0, doubleResult, 0.0001);
     }
 
+    @Test
+    void shouldReturnErrorWhenDividingByZero(){
+        ArithmeticException thrown = assertThrows(
+                ArithmeticException.class,
+                () -> calculator.divide(10, 0)
+        );
+
+        assertEquals("Cannot divide by zero.", thrown.getMessage());
+    }
+
 }
