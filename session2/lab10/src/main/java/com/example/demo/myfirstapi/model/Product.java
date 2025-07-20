@@ -1,5 +1,7 @@
 package com.example.demo.myfirstapi.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import java.util.Objects; // Used for Objects.hash and Objects.equals
 
 public class Product {
@@ -8,15 +10,16 @@ public class Product {
     private String name;
     private double price;
 
+    @JsonCreator
     // Constructor to create new Product objects (without ID initially)
     public Product(String name, double price) {
         this.name = name;
         this.price = price;
     }
 
-    public Product() {
-        
-    }
+//    public Product() {
+//        super();
+//    }
 
     // Constructor to create Product objects with an ID (e.g., when loading from storage)
     public Product(Long id, String name, double price) {
